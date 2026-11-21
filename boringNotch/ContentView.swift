@@ -258,15 +258,15 @@ struct ContentView: View {
 
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
-                let mainLayout = NotchLayout()
-                    .frame(alignment: .top)
-                    .padding(
-                        .horizontal,
-                        vm.notchState == .open ? openedInsets.top : cornerRadiusInsets.closed.bottom
-                    )
-                    .padding([.horizontal, .bottom], vm.notchState == .open ? 12 : 0)
-                    .background(.black)
-                    .clipShape(currentNotchShape)
+                let mainLayout = NotchLayout(
+                    notchState: vm.notchState,
+                    compactMode: Defaults[.compactMode],
+                    openedTopInset: openedInsets.top,
+                    closedBottomInset: cornerRadiusInsets.closed.bottom,
+                    openHorizontalPadding: 12
+                )
+                .frame(alignment: .top)
+                .clipShape(currentNotchShape)
                           .overlay(alignment: .top) {
                               displayClosedNotchHeight.isZero && vm.notchState == .closed ? nil
                         : Rectangle()
@@ -413,8 +413,16 @@ struct ContentView: View {
     }
 
     @ViewBuilder
-    func NotchLayout() -> some View {
+    func NotchLayout(
+        notchState: NotchState,
+        compactMode: Bool,
+        openedTopInset: CGFloat,
+        closedBottomInset: CGFloat,
+        openHorizontalPadding: CGFloat
+    ) -> some View {
         @Bindable var dropInteraction = vm.dropInteraction
+
+        let isCompactOpen = notchState == .open && compactMode
 
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
@@ -542,14 +550,14 @@ struct ContentView: View {
                               .fixedSize()
                       }
                       .zIndex(1)
-            if vm.notchState == .open {
+            if notchState == .open {
                 VStack {
                     // An open notch with a live notification is showing the
                     // reply UI — the usual tabs can wait until it's dismissed.
                     if let notification = notificationManager.activeNotification {
                         NotificationExpandedView(notification: notification)
                             .id(notification.id)
-                    } else if Defaults[.compactMode] {
+                    } else if compactMode {
                         // Player only — no tab switching, so currentView is
                         // ignored here rather than offering a shelf the
                         // compact layout has no room (or tab bar) for.
@@ -589,8 +597,25 @@ struct ContentView: View {
                     .animation(.smooth(duration: 0.35))
                 )
                 .zIndex(1)
-                .allowsHitTesting(vm.notchState == .open)
+                .allowsHitTesting(notchState == .open)
                 .opacity(gestureProgress != 0 ? 1.0 - min(abs(gestureProgress) * 0.1, 0.3) : 1.0)
+            }
+        }
+        .padding(
+            .horizontal,
+            notchState == .open ? openedTopInset : closedBottomInset
+        )
+        .padding([.horizontal, .bottom], notchState == .open ? openHorizontalPadding : 0)
+        .background {
+            if isCompactOpen {
+                // Liquid Glass surface for opened Compact Mode
+                LiquidGlassSurface(
+                    topCornerRadius: compactCornerRadiusInsets.opened.top,
+                    bottomCornerRadius: compactCornerRadiusInsets.opened.bottom
+                )
+            } else {
+                // Solid black for all other states (closed notch, standard open, notifications, etc.)
+                Color.black
             }
         }
         .onDrop(of: [.fileURL, .url, .utf8PlainText, .plainText, .data], delegate: GeneralDropTargetDelegate(isTargeted: $dropInteraction.generalDropTargeting))

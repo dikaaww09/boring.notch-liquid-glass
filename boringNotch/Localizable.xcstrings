@@ -1722,52 +1722,6 @@
         }
       }
     },
-    "Use preferred display" : {
-      "comment" : "Display behavior option: keep the notch on the preferred display.",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Usar la pantalla preferida"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utiliser l'écran préféré"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voorkeurscherm gebruiken"
-          }
-        }
-      }
-    },
-    "Automatically switch display if preferred is unavailable" : {
-      "comment" : "Display behavior option: switch to the active display when the preferred display is unavailable.",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambiar automáticamente a la pantalla activa si la preferida no está disponible"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Basculer automatiquement si l'écran préféré est indisponible"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatisch van scherm wisselen als voorkeursscherm niet beschikbaar is"
-          }
-        }
-      }
-    },
     "Always Open With" : {
       "localizations" : {
         "es" : {
@@ -2785,6 +2739,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "自動下載更新"
+          }
+        }
+      }
+    },
+    "Automatically switch display if preferred is unavailable" : {
+      "comment" : "Display behavior option: switch to the active display when the preferred display is unavailable.",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiar automáticamente a la pantalla activa si la preferida no está disponible"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basculer automatiquement si l'écran préféré est indisponible"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch van scherm wisselen als voorkeursscherm niet beschikbaar is"
           }
         }
       }
@@ -9704,6 +9681,9 @@
           }
         }
       }
+    },
+    "Display behavior" : {
+
     },
     "Displays" : {
       "localizations" : {
@@ -28651,6 +28631,7 @@
     },
     "Switch if preferred display is unavailable" : {
       "comment" : "A toggle that allows the user to have the app automatically switch to a different display when the preferred display becomes unavailable.",
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -30485,6 +30466,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "喺劉海兩邊顯示"
+          }
+        }
+      }
+    },
+    "Use preferred display" : {
+      "comment" : "Display behavior option: keep the notch on the preferred display.",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar la pantalla preferida"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser l'écran préféré"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voorkeurscherm gebruiken"
           }
         }
       }

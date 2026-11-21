@@ -138,7 +138,9 @@
 		C1A6A2B12D00000100000001 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A6A2AE2D00000100000001 /* CameraModel.swift */; };
 		F1F2A0A100000000000000F1 /* AudioCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2A0A200000000000000F2 /* AudioCaptureManager.swift */; };
 		F38DE6482D8243E7008B5C6D /* BatteryActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DE6472D8243E2008B5C6D /* BatteryActivityManager.swift */; };
-/* End PBXBuildFile section */
+		D1CA00000000000000000001 /* LiquidGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA00000000000000000002 /* LiquidGlassSurface.swift */; };
+
+		/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		11F748592EC9AABA00F841DB /* PBXContainerItemProxy */ = {
@@ -307,7 +309,9 @@
 		EAB1C3E8B149445A9E57C6AF /* NotchWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchWindowManager.swift; sourceTree = "<group>"; };
 		F1F2A0A200000000000000F2 /* AudioCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureManager.swift; sourceTree = "<group>"; };
 		F38DE6472D8243E2008B5C6D /* BatteryActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryActivityManager.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
+		D1CA00000000000000000002 /* LiquidGlassSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidGlassSurface.swift; sourceTree = "<group>"; };
+
+		/* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		11F7485C2EC9AABA00F841DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
@@ -769,6 +773,7 @@
 				AA04LAS22E7A0001 /* LiveActivityStack.swift */,
 				1194E8862EA6DDA7009C82D6 /* BoringNotchSkyLightWindow.swift */,
 				1160F8D72DD98230006FBB94 /* NotchShape.swift */,
+				D1CA00000000000000000002 /* LiquidGlassSurface.swift */,
 				9AB0C6BB2C73C9CB00F7CD30 /* NotchHomeView.swift */,
 				14D570C52C5F38210011E668 /* BoringHeader.swift */,
 				14D570D12C5F6C6A0011E668 /* BoringExtrasMenu.swift */,
@@ -1014,6 +1019,7 @@
 				1100292E2E86940F00035A57 /* QuickShareService.swift in Sources */,
 				1113ABCE2E80E27000EC13B2 /* ShelfActionService.swift in Sources */,
 				1160F8D82DD98230006FBB94 /* NotchShape.swift in Sources */,
+				D1CA00000000000000000001 /* LiquidGlassSurface.swift in Sources */,
 				5917FD112E57891600E87F1C /* MediaKeyInterceptor.swift in Sources */,
 				149E0B9A2C737D40006418B1 /* WebcamView.swift in Sources */,
 				AA01SNM12E7A0001 /* SystemNotificationManager.swift in Sources */,
